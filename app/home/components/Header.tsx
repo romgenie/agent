@@ -2,7 +2,7 @@ import { ConnectWallet } from '@/components/connect'
 import { Menu, X } from 'lucide-react'
 import { Stats } from './Chat/Stats'
 import { HowItWorks } from './Chat/HowItWorks'
-import { TGameState } from '@/actions/getGameState'
+import { TGameState } from '@/app/actions/getGameState'
 import { useState } from 'react'
 
 const MobileMenu = ({ gameState, prizeFund, isOpen, onClose }: { 

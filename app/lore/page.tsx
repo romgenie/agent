@@ -1,4 +1,4 @@
-import { getGameState } from "@/actions/getGameState";
+import { getGameState } from "@/app/actions/getGameState";
 import { Lore } from "./components/Lore";
 
 export const dynamic = "force-dynamic";

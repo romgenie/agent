@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
-import { TMessage } from "@/actions/getMessages";
+import { TMessage } from "@/app/actions/getMessages";
 import { useEffect, useState } from "react";
-import { getMessageByTxHash } from "@/actions/getMessageByTxHash";
+import { getMessageByTxHash } from "@/app/actions/getMessageByTxHash";
 
 type ConversationModalProps = {
   messageId: string;

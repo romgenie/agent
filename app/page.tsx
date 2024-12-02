@@ -1,5 +1,5 @@
-import { getGameState } from "@/actions/getGameState";
-import { getRecentMessages } from "@/actions/getMessages";
+import { getGameState } from "@/app/actions/getGameState";
+import { getRecentMessages } from "@/app/actions/getMessages";
 import { Main } from "@/app/home/components/Main";
 
 export default async function Page() {
