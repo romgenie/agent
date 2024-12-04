@@ -25,8 +25,26 @@ export async function submitPrompt(
   userWallet: string
 ): Promise<void> {
   try {
-    // Placeholder implementation
-    console.log("Submitting prompt:", { sessionId, hash, prompt, userWallet });
+    const response = await fetch("/api/submitPrompt",  {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        sessionId,
+        hash,
+        prompt,
+        userWallet,
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.error || "Failed to submit prompt");
+    }
+
+    return await response.json();
+
   } catch (error) {
     console.error("Error submitting prompt:", error);
     throw error;

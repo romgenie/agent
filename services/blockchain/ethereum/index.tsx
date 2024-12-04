@@ -79,8 +79,8 @@ export async function getAddressBalance(address: string): Promise<string> {
     const rpcUrl = process.env.ETHEREUM_RPC_URL;
     console.log("Getting address balance", address, rpcUrl);
     const provider = new ethers.JsonRpcProvider(process.env.ETHEREUM_RPC_URL, {
-      chainId: 8453, // Base mainnet chain ID
-      name: "base",
+      chainId: Number(process.env.ETHEREUM_CHAIN_ID),
+      name: process.env.ETHEREUM_CHAIN_NAME,
     });
     const balance = await provider.getBalance(address);
 

@@ -1,12 +1,17 @@
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
-import { base } from "wagmi/chains";
+import { base,sepolia } from "wagmi/chains";
 
 import { PublicKey, Cluster } from "@solana/web3.js";
 
+
 export const config = getDefaultConfig({
   appName: "Freysa",
-  projectId: "e7df0e7277ec915bd5625c2cce004386",
-  chains: [base],
+  projectId: process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID!,
+  chains: [
+    process.env.NEXT_PUBLIC_ENABLE_TESTNETS === "true" 
+      ? sepolia 
+      : base
+  ],
   ssr: true,
 });
 
